@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İbrahim Ağazadə - I&C Mühəndisi</title>
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            --primary-color: #1a2980;
+            --secondary-color: #26d0ce;
+            --accent-color: #ff6b6b;
+            --dark-color: #0f1a5c;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 10px;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --gradient-reverse: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+        
+        /* ========== GLOBAL STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            height: 70%;
+            width: 6px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(26, 41, 128, 0.1);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(38, 208, 206, 0.1) 0%, rgba(26, 41, 128, 0.1) 100%);
+            z-index: 0;
+        }
+        
+        .header-decoration:nth-child(1) {
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+        }
+        
+        .header-decoration:nth-child(2) {
+            bottom: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        /* ========== PROFILE SECTION ========== */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 900px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .profile-img {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: fit-content;
+        }
+        
+        .profile-img:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .profile-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(26, 41, 128, 0.8), transparent);
+            z-index: 1;
+        }
+        
+        .profile-name {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            z-index: 2;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .quick-info {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+            border: 1px solid rgba(26, 41, 128, 0.1);
+        }
+        
+        .quick-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quick-info h3::before {
+            content: '📋';
+            font-size: 1.2rem;
+        }
+        
+        .quick-info ul {
+            list-style: none;
+        }
+        
+        .quick-info li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #eaeaea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .quick-info li:last-child {
+            border-bottom: none;
+        }
+        
+        .quick-info li i {
+            color: var(--secondary-color);
+            font-style: normal;
+            width: 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* ========== SECTIONS ========== */
+        section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(26, 41, 128, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        /* ========== PROFESSIONAL SUMMARY ========== */
+        .professional-summary {
+            background: linear-gradient(135deg, rgba(26, 41, 128, 0.05) 0%, rgba(38, 208, 206, 0.05) 100%);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+            border-left: 5px solid var(--secondary-color);
+            position: relative;
+        }
+        
+        .professional-summary h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .professional-summary h3::before {
+            content: '⭐';
+            font-size: 1.2rem;
+        }
+        
+        /* ========== WORK EXPERIENCE ========== */
+        .work-experience {
+            margin-top: 20px;
+        }
+        
+        .job {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eaeaea;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gradient);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px rgba(38, 208, 206, 0.2);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .job-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .company {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 5px;
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(38, 208, 206, 0.1);
+            border-radius: 20px;
+        }
+        
+        .date {
+            background: var(--gradient);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(26, 41, 128, 0.2);
+        }
+        
+        .job-details ul {
+            list-style: none;
+        }
+        
+        .job-details li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-color);
+        }
+        
+        .job-details li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        /* ========== EDUCATION ========== */
+        .education-item {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #eaeaea;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .education-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .edu-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .edu-degree {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .edu-date {
+            background: rgba(26, 41, 128, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* ========== CERTIFICATES ========== */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .certificate-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(26, 41, 128, 0.1);
+            transition: var(--transition);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            border-color: var(--secondary-color);
+        }
+        
+        .certificate-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .certificate-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .certificate-score {
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(26, 41, 128, 0.2);
+        }
+        
+        /* ========== LANGUAGES ========== */
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .language-item {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, rgba(26, 41, 128, 0.05) 0%, rgba(38, 208, 206, 0.05) 100%);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(26, 41, 128, 0.1);
+            transition: var(--transition);
+        }
+        
+        .language-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .language-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .language-level {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* ========== SKILLS ========== */
+        .skills-category {
+            margin-bottom: 35px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+        
+        .skills-category::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gradient);
+        }
+        
+        .skills-category h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(26, 41, 128, 0.1);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-item {
+            background: rgba(38, 208, 206, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover {
+            background: rgba(38, 208, 206, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .skill-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 50px 20px;
+            border-radius: var(--border-radius);
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        footer h2 {
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-item i {
+            font-style: normal;
+            background: rgba(255, 255, 255, 0.3);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        section {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .job {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            
+            h1 { 
+                font-size: 2.2rem; 
+                text-align: center;
+                display: block;
+            }
+            
+            h1::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.4rem; }
+            
+            .profile-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .profile-img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+            
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .date {
+                align-self: flex-start;
+            }
+            
+            .education-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .edu-date {
+                width: fit-content;
+            }
+        }
+        
+        /* ========== SPECIAL EFFECTS ========== */
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+            position: relative;
+            padding: 0 5px;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(38, 208, 206, 0.3);
+            z-index: -1;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: rgba(26, 41, 128, 0.1);
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 4px;
+        }
+        
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gradient-reverse);
+        }
+        
+        /* ========== PRINT STYLES ========== */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            section, .quick-info, .certificate-item, .language-item {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+            
+            .contact-item {
+                background: white !important;
+                color: black !important;
+                border: 1px solid #ddd !important;
+            }
+            
+            footer {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .gradient-text, .gradient-bg {
+                background: none !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Başlıq hissəsi -->
+        <header>
+            <div class="header-decoration"></div>
+            <div class="header-decoration"></div>
+            <h1>İbrahim Ağazadə</h1>
+            <div class="subtitle">Instrumentation and Control (I&C) Mühəndisi | Proseslərin Avtomatlaşdırması Mühəndisi</div>
+        </header>
+        
+        <!-- Profil şəkli və qısa məlumat -->
+        <div class="profile-container">
+            <div class="profile-img">
+                <img src="images/Untitled design (1).png" alt="İbrahim Ağazadə - I&C Mühəndisi">
+                <div class="profile-name">İbrahim Ağazadə</div>
+            </div>
+            
+            <div class="profile-summary">
+                <div class="quick-info">
+                    <h3>Əlaqə Məlumatları</h3>
+                    <ul>
+                        <li><i>✉</i> ibrahim362agazade@gmail.com</li>
+                        <li><i>📱</i> (+994) 50-555-27-07</li>
+                        <li><i>📍</i> Bakı, Azərbaycan</li>
+                        <li><i>🔗</i> linkedin.com/in/ibrahimagazade</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Haqqımda bölməsi -->
+        <section id="about">
+            <h2>Haqqımda</h2>
+            <p>Mən <span class="highlight">İbrahim Ağazadə</span>, proseslərin avtomatlaşdırılması və idarə olunması sahəsində təhsil almmış <span class="highlight">Instrumentation and Control (I&C) mühəndisiyəm</span>. Azərbaycan Dövlət Neft və Sənaye Universitetində "Proseslərin Avtomatlaşdırılması" ixtisası üzrə bakalavr təhsili almış, hazırda isə Azərbaycan Texniki Universitetində "Texnoloji proseslərin avtomatlaşdırılması və idarə olunması" ixtisası üzrə magistratura təhsilimi davam etdirirəm.</p>
+            
+            <div class="professional-summary">
+                <h3>Peşəkar Xülasə</h3>
+                <p>Yüksək motivasiyalı və nəticəyönümlü Instrumentation and Control (I&C) mütəxəssisi olaraq sənaye idarəetmə və monitorinq sistemlərinin sahə xidməti, yerləşdirilməsi və saxlanması sahəsində praktiki təcrübəyə malikəm. Dəqiq sahə cihazlarının kalibrlənməsi və loop checking proseslərini yerinə yetirmək, P&ID sxemlərini təhlil etmək və Bently Nevada 3500 Machine Monitoring System vasitəsilə kritik fırlanan avadanlıqların saxlanması sahəsində bilik və bacarıqlara malikəm. Əsas diqqətim proaktiv nasazlıqların aradan qaldırılması vasitəsilə planlaşdırılmamış dayanma müddətlərini minimuma endirmək, sistem etibarlılığını təmin etmək və müxtəlif sənaye mühitlərində əməliyyat və təhlükəsizlik uyğunluğunu ciddi şəkildə tətbiq etməkdir.</p>
+            </div>
+        </section>
+        
+        <!-- İş Təcrübəsi -->
+        <section id="work-experience">
+            <h2>İş Təcrübəsi</h2>
+            <div class="work-experience">
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Distributed Control System Engineer - Təcrübə Proqramı</div>
+                            <div class="company">SOCAR Polymer, Sumqayıt</div>
+                        </div>
+                        <div class="date">07/2025 - 09/2025</div>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li><strong>Instrumentation və Kalibrləmə:</strong> Emalatxanada əsasən transmitterlər üzərində cihaz kalibrləməsini dəstəklədim və həyata keçirdim.</li>
+                            <li><strong>Proses Təhlükəsizliyi:</strong> Proses mühəndisləri ilə əməkdaşlıq edərək və P&ID sxemlərini təhlil edərək zavod əməliyyatlarını öyrəndim. Xüsusilə DCS məntiqində Təcili Dayandırma (ESD) interlocklarını başa düşmək və tətbiq etmək üzərində işlədim.</li>
+                            <li><strong>Vibrasiya Monitorinqi:</strong> Bently Nevada 3500 Machine Monitoring System (MMS) ilə vibrasiya analizi və kritik avadanlıqların vəziyyət monitorinqi üzrə praktiki təcrübə qazandım.</li>
+                            <li><strong>Proses Optimallaşdırılması:</strong> Xammal ötürülmə prosesini optimallaşdıraraq yekun layihəyə töhfə verdim. Dəyişən Tezlikli Sürücü (VFD) motorunu idarəetmə sisteminə inteqrasiya etdim ki, bu da çən-danışdırma əməliyyatlarını səmərəli, hamar və qənaətcil etdi.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Kiçik Mühəndis</div>
+                            <div class="company">Metak, Bakı</div>
+                        </div>
+                        <div class="date">11/2024 - 07/2025</div>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li><strong>Layihə Koordinasiyası:</strong> Horizontal Davamlı Tökmə Xətti quraşdırma layihəsi üçün Layihə Koordinatoru kimi planlaşdırma, departamentlər arası koordinasiya və icranı idarə edərək vaxtında tamamlanmasını təmin etdim.</li>
+                            <li><strong>Mühəndislik Nəticələri:</strong> Dizayn və sənədləşdirmə üçün 2D AutoCAD, 3D modelləşdirmə və vizuallaşdırma üçün SolidWorks-dən istifadə edərək mühəndislik çıxışlarına töhfə verdim.</li>
+                            <li><strong>Uyğunluq və Hesabat:</strong> İş yeri təhlükəsizliyi qaydalarına əməl olunduğunu təmin etdim və layihə monitorinq qabiliyyətini nümayiş etdirən aylıq texniki hesabatların tərtibinə töhfə verdim.</li>
+                            <li><strong>Avtomatlaşdırma İnteqrasiyası:</strong> Haitian injection molding maşınının quraşdırılması və sınaqdan keçirilməsinə nəzarət edərək, mövcud avtomatlaşdırma sistemləri ilə tam inteqrasiyanı təmin etdim.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Proses Avtomatlaşdırma Mühəndisi - Təcrübə Proqramı</div>
+                            <div class="company">Kibrit Tech, Bakı</div>
+                        </div>
+                        <div class="date">02/2024 - 08/2024</div>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li>Əsas bir ictimai obyekt üçün tullantı suyu təmizləmə sisteminin avtomatlaşdırılmasına rəhbərlik edərək, çirklənmiş suyun dənizə təhlükəsiz buraxılmazdan əvvəl tam təmizlənməsini təmin etdim.</li>
+                            <li>Temperatur və təzyiq idarəetmə cihazlarının rutin kalibrlənməsi və diaqnostikasında iştirak etdim.</li>
+                            <li>Aylıq texniki hesabatların tərtibinə töhfə verdim və iş yeri təhlükəsizliyi qaydalarına əməl olunduğunu təmin etdim.</li>
+                            <li>Sistem performansını optimallaşdırmaq və avadanlıq sıradan çıxma səviyyəsini azaltmaq üçün mühəndislərlə əməkdaşlıq etdim.</li>
+                            <li>Sistem funksionallığını və etibarlılığını təmin edərək, digər PLC əsaslı avtomatlaşdırma sistemlərinin quraşdırılması və saxlanmasına kömək etdim.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Layihə İşi</div>
+                            <div class="company">Developia, Bakı</div>
+                        </div>
+                        <div class="date">05/2023 - 08/2023</div>
+                    </div>
+                    <div class="job-details">
+                        <ul>
+                            <li>İdarəetmə sistemi nasazlıqlarını diaqnostika edib həll edərək, dayanma müddətini 15% azaltdım və əməliyyat səmərəliliyini artırdım.</li>
+                            <li>P&ID diaqramları, məftil düzülüşləri və test hesabatları daxil olmaqla, tənzimləyici və əməliyyat istifadəsi üçün hərtərəfli texniki sənədləri hazırladım və saxladım.</li>
+                            <li>4 nəfərdən ibarət komandaya sənaye su təmizləmə zavodu üçün avtomatlaşdırılmış idarəetmə sistemi dizayn etməyə rəhbərlik etdim (akademik layihə çərçivəsində).</li>
+                            <li>Sahə ölçmə cihazlarının (axın, təzyiq, səviyyə və pH sensorları) quraşdırılması və yerləşdirilməsində əməkdaşlıq edərək, onları HMI/SCADA sistemləri ilə inteqrasiya etdim.</li>
+                            <li>Suyun təmizlənmə dövrünün filtrasiya, kimyəvi dozalaması və boşaldılma mərhələlərini idarə etmək üçün Siemens PLC proqramlarını dizayn edib tətbiq etdim.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Təhsil -->
+        <section id="education">
+            <h2>Təhsil</h2>
+            
+            <div class="education-item">
+                <div class="edu-info">
+                    <h3>Azərbaycan Texniki Universiteti</h3>
+                    <div class="edu-degree">Magistr Dərəcəsi - Texnoloji proseslərin avtomatlaşdırılması və idarə olunması</div>
+                    <div>Bakı, Azərbaycan</div>
+                </div>
+                <div class="edu-date">2025 - 2027</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="edu-info">
+                    <h3>Azərbaycan Dövlət Neft və Sənaye Universiteti</h3>
+                    <div class="edu-degree">Bakalavr Dərəcəsi - Proses Avtomatlaşdırması Mühəndisi</div>
+                    <div>Bakı, Azərbaycan</div>
+                </div>
+                <div class="edu-date">2021 - 2025</div>
+            </div>
+        </section>
+        
+        <!-- Sertifikatlar -->
+        <section id="certificates">
+            <h2>Sertifikatlar və Kurslar</h2>
+            
+            <div class="certificates-grid">
+                <div class="certificate-item">
+                    <h4>PLC Proqramlaşdırma Kursu</h4>
+                    <p>İçməli Su Təmizləmə Zavodu üçün PLC Proqramlaşdırma Layihəsi</p>
+                </div>
+                
+                <div class="certificate-item">
+                    <h4>Avtomatik İdarəetmə Sistemlərində Aktuatorlar</h4>
+                    <p>Qazanma faizi: 94%</p>
+                    <div class="certificate-score">94%</div>
+                </div>
+                
+                <div class="certificate-item">
+                    <h4>Ölçmə Cihazları - Temperatur və Təzyiq Ölçməsi</h4>
+                    <p>Qazanma faizi: 94%</p>
+                    <div class="certificate-score">94%</div>
+                </div>
+                
+                <div class="certificate-item">
+                    <h4>P&ID Sənədlərinin Oxunulması</h4>
+                    <p>Qazanma faizi: 80%</p>
+                    <div class="certificate-score">80%</div>
+                </div>
+                
+                <div class="certificate-item">
+                    <h4>Layihə İdarəetmə Təlimi və Seminar</h4>
+                    <p>Tamamlanma Sertifikatı</p>
+                </div>
+                
+                <div class="certificate-item">
+                    <h4>IELTS</h4>
+                    <p>Ümumi Nəticə: 6.5</p>
+                    <div class="certificate-score">6.5</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dillər -->
+        <section id="languages">
+            <h2>Dillər</h2>
+            
+            <div class="languages">
+                <div class="language-item">
+                    <h4>Azərbaycan</h4>
+                    <div class="language-level">Ana dili</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <h4>İngilis</h4>
+                    <div class="language-level">Yüksək Orta (B2)</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <h4>Türk</h4>
+                    <div class="language-level">İki dillilik Səviyyəsi</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bacarıqlar -->
+        <section id="skills">
+            <h2>Bacarıqlar</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>PLC Proqramlaşdırma</h4>
+                    <p>Siemens PLC sistemlərinin proqramlaşdırılması və nasazlıqların aradan qaldırılması</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Instrumentation & Control</h4>
+                    <p>İdarəetmə sistemlərinin konfiqurasiyası, ölçmə cihazları və performans məlumatlarının təhlili</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Avtomatlaşdırma Alətləri</h4>
+                    <p>SCADA, HMI və DCS sistemləri ilə praktiki təcrübə</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Layihə İdarəetmə</h4>
+                    <p>Jira, ClickUp, layihə planlaşdırılması və koordinasiyası</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Texniki Sənədləşmə</h4>
+                    <p>P&ID diaqramları, texniki hesabatlar, dizayn spesifikasiyaları</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h4>Təhlükəsizlik Standartları</h4>
+                    <p>IEC, ISA və SIL standartları üzrə bilik</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Əlaqə məlumatları -->
+        <footer>
+            <h2>Əlaqə Saxlayın</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>✉</i>
+                    <span>ibrahim362agazade@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i>📱</i>
+                    <span>(+994) 50-555-27-07</span>
+                </div>
+                <div class="contact-item">
+                    <i>🔗</i>
+                    <span>linkedin.com/in/ibrahimagazade</span>
+                </div>
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span>Bakı, Azərbaycan</span>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 İbrahim Ağazadə. Bütün hüquqlar qorunur.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
